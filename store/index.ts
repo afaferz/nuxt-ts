@@ -15,7 +15,7 @@ export const state = () => ({
 export type State = ReturnType<typeof state>
 
 export const getters: GetterTree<State, State> = {
-    [EGetters.GET_TITLE]: state => state.title,
+    [EGetters.GET_TITLE]: (state) => state.title,
 }
 
 export const mutations: MutationTree<State> = {
@@ -27,8 +27,6 @@ export const actions: ActionTree<State, State> = {
     //     commit(MutationType.CHANGE_DESCRIPTION, "I'm defined by server side")
     //   }
 }
-
-
 
 // export const store: Store<unknown> = new Vuex.Store({
 //     state,

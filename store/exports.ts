@@ -6,7 +6,7 @@ export const store = {
     modules: {
         counter: {
             namespaced: true,
-            ...CounterModule
-        }
-    }
+            ...CounterModule,
+        },
+    },
 }

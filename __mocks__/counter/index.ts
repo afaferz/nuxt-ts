@@ -1,4 +1,4 @@
-import { ECounterActions, ECounterMutations } from "../../store/counter/types"
+import { ECounterActions, ECounterMutations } from '../../store/counter/types'
 import * as CounterModuleStore from '../../store/counter'
 
 const counterModule = {

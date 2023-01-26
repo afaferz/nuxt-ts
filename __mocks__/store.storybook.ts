@@ -1,7 +1,7 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: () => require('../store/index').state,
@@ -15,7 +15,7 @@ const store = new Vuex.Store({
             getters: require('../store/counter/index').getters,
             mutations: require('../store/counter/index').mutations,
             actions: require('../store/counter/index').actions,
-        }
-    }
+        },
+    },
 })
-export default store;
+export default store

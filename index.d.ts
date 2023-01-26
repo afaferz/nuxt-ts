@@ -1,4 +1,4 @@
-import { Store } from 'vuex';
+import { Store } from 'vuex'
 
 declare module '@vue/runtime-core' {
     interface State {
@@ -17,8 +17,6 @@ declare module '@nuxt/types' {
     }
 
     interface Context {
-        $store: Store<any>,
+        $store: Store<any>
     }
 }
-
-

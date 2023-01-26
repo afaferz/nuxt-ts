@@ -6,12 +6,18 @@ const optionsConfig = {
     component: CounterComponent,
 }
 const anotherConfigs = { excludeStories: /.*Data$/ }
-const meta = storyFactory<typeof CounterComponent>({ options: optionsConfig, ...anotherConfigs })
-export default meta;
+const meta = storyFactory<typeof CounterComponent>({
+    options: optionsConfig,
+    ...anotherConfigs,
+})
+export default meta
 
 // // Template to Stories
 const template = '<CounterComponent />'
-export const Default = makeStorie<typeof CounterComponent>(CounterComponent, template)
+export const Default = makeStorie<typeof CounterComponent>(
+    CounterComponent,
+    template
+)
 Default.parameters = {
-    jest: 'CounterComponent.spec.ts'
+    jest: 'CounterComponent.spec.ts',
 }

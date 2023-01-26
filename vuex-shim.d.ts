@@ -1,4 +1,3 @@
-
 import { Store } from 'vuex'
 
 declare module '@nuxt/types' {
@@ -7,6 +6,6 @@ declare module '@nuxt/types' {
     }
 
     interface Context {
-        $store: Store<any>,
+        $store: Store<any>
     }
 }

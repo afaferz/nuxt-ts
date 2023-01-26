@@ -24,11 +24,11 @@ module.exports = {
         '^@/(.*)$': '<rootDir>/$1',
         // this line is optional and the tilde shortcut
         // will not be used in this tutorial
-        '^~/(.*)$': '<rootDir>/$1'
+        '^~/(.*)$': '<rootDir>/$1',
     },
     transform: {
         '^.+\\.ts?$': 'ts-jest',
-        '.*\\.(vue)$': 'vue-jest'
+        '.*\\.(vue)$': 'vue-jest',
     },
     moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
     modulePathIgnorePatterns: ['node_modules', 'jest-test-results.json'],
@@ -39,7 +39,7 @@ module.exports = {
         '<rootDir>/pages/**/*.vue',
         '<rootDir>/lib/**/*.ts',
         '<rootDir>/plugins/**/*.ts',
-        '<rootDir>/store/**/*.ts'
+        '<rootDir>/store/**/*.ts',
     ],
-    setupFiles: ["./tests/setupTest.ts"]
-};
+    setupFiles: ['./tests/setupTest.ts'],
+}

@@ -1,4 +1,4 @@
-import { state } from "."
+import { state } from '.'
 
 export enum ECounterMutations {
     INCREMENT_COUNTER = 'INCREMENT_COUNTER',
@@ -11,8 +11,7 @@ export enum ECounterActions {
 }
 
 export enum ECounterGetters {
-    GET_COUNTER = 'GET_COUNTER'
+    GET_COUNTER = 'GET_COUNTER',
 }
 
 export type State = ReturnType<typeof state>
-

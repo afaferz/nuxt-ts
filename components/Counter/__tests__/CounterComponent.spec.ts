@@ -1,7 +1,7 @@
 import CounterComponent from '../CounterComponent.vue'
-import { makeShallowMountComponent } from '~/utils/PageBuilder.utils';
+import { makeShallowMountComponent } from '~/utils/PageBuilder.utils'
 import CounterModuleStoreMock from '~/__mocks__/counter'
-import { WrapperEl } from '~/types/VueTypes';
+import { WrapperEl } from '~/types/VueTypes'
 
 // const localVue = createLocalVue()
 // localVue.use(Vuex)
@@ -39,8 +39,8 @@ describe('Test Counter Component', () => {
     })
 
     afterEach(() => {
-        wrapperEl.destroy();
-    });
+        wrapperEl.destroy()
+    })
 
     it('should be mounted', () => {
         expect(wrapperEl.vm).toBeTruthy()
@@ -49,24 +49,36 @@ describe('Test Counter Component', () => {
         const buttonDecrement = wrapperEl.find('[data-test="button-decrement"]')
         buttonDecrement.vm.$emit('click')
         await wrapperEl.vm.$nextTick()
-        expect(CounterModuleStoreMock.mutations.DECREMENT_COUNTER).toHaveBeenCalled()
+        expect(
+            CounterModuleStoreMock.mutations.DECREMENT_COUNTER
+        ).toHaveBeenCalled()
     })
     it('should decrement the counter async ', async () => {
-        const buttonDecrement = wrapperEl.find('[data-test="button-decrement-async"]')
+        const buttonDecrement = wrapperEl.find(
+            '[data-test="button-decrement-async"]'
+        )
         buttonDecrement.vm.$emit('click')
         await wrapperEl.vm.$nextTick()
-        expect(CounterModuleStoreMock.actions.ASYNC_DECREMENT_COUNTER).toHaveBeenCalled()
+        expect(
+            CounterModuleStoreMock.actions.ASYNC_DECREMENT_COUNTER
+        ).toHaveBeenCalled()
     })
     it('should increment the counter', async () => {
         const buttonIncrement = wrapperEl.find('[data-test="button-increment"]')
         buttonIncrement.vm.$emit('click')
         await wrapperEl.vm.$nextTick()
-        expect(CounterModuleStoreMock.mutations.INCREMENT_COUNTER).toHaveBeenCalled()
+        expect(
+            CounterModuleStoreMock.mutations.INCREMENT_COUNTER
+        ).toHaveBeenCalled()
     })
     it('should increment the counter async ', async () => {
-        const buttonIncrementAsync = wrapperEl.find('[data-test="button-increment-async"]')
+        const buttonIncrementAsync = wrapperEl.find(
+            '[data-test="button-increment-async"]'
+        )
         buttonIncrementAsync.vm.$emit('click')
         await wrapperEl.vm.$nextTick()
-        expect(CounterModuleStoreMock.actions.ASYNC_INCREMENT_COUNTER).toHaveBeenCalled()
+        expect(
+            CounterModuleStoreMock.actions.ASYNC_INCREMENT_COUNTER
+        ).toHaveBeenCalled()
     })
-});
+})

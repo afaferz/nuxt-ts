@@ -3,11 +3,7 @@
         "target": "ES2018",
         "module": "ESNext",
         "moduleResolution": "Node",
-        "lib": [
-            "ESNext",
-            "ESNext.AsyncIterable",
-            "DOM"
-        ],
+        "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
         "esModuleInterop": true,
         "allowJs": true,
         "sourceMap": true,
@@ -17,25 +13,12 @@
         "strictBindCallApply": true,
         "baseUrl": ".",
         "paths": {
-            "~/*": [
-                "./*"
-            ],
-            "@/*": [
-                "./*"
-            ]
+            "~/*": ["./*"],
+            "@/*": ["./*"]
         },
-        "types": [
-            "@nuxt/types",
-            "@nuxtjs/axios",
-            "@types/node",
-            "@types/jest"
-        ]
+        "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@types/jest"]
     },
-    "exclude": [
-        "node_modules",
-        ".nuxt",
-        "dist"
-    ],
+    "exclude": ["node_modules", ".nuxt", "dist"],
     "ts-node": {
         "compilerOptions": {
             "module": "commonjs"

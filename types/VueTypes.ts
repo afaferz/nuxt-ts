@@ -1,4 +1,4 @@
-import { Wrapper } from "@vue/test-utils";
+import { Wrapper } from '@vue/test-utils'
 
 export type RelaxedVue = Vue & { [key: string]: any }
-export type WrapperEl = Wrapper<RelaxedVue, Element>;
+export type WrapperEl = Wrapper<RelaxedVue, Element>

@@ -1,8 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/vue';
+import type { Meta, StoryObj } from '@storybook/vue'
 import store from '../__mocks__/store.storybook'
-import Vue, { VueConstructor } from 'vue';
+import Vue, { VueConstructor } from 'vue'
 
-export function storyFactory<T>({ options, ...addictional }: OptionsParameters): Meta<T> {
+export function storyFactory<T>({
+    options,
+    ...addictional
+}: OptionsParameters): Meta<T> {
     const { title, component, args, description } = options
     const preConfig = {
         title,
@@ -29,12 +32,19 @@ export function storyFactory<T>({ options, ...addictional }: OptionsParameters):
     return config
 }
 
-export function makeStorie<T>(component: VueConstructor, template: string): StoryObj<T> {
+export function makeStorie<T>(
+    component: VueConstructor,
+    template: string
+): StoryObj<T> {
     // Normalize the template
-    let componentName: string;
+    let componentName: string
     const closedComponentTemplate = template.split(/<\//gi)
-    if (closedComponentTemplate.length > 1) { componentName = closedComponentTemplate[0].trim().replace(/[^a-z0-9]/gi, '') }
-    else if (closedComponentTemplate) componentName = template.trim().replace(/[^a-z0-9]/gi, '')
+    if (closedComponentTemplate.length > 1) {
+        componentName = closedComponentTemplate[0]
+            .trim()
+            .replace(/[^a-z0-9]/gi, '')
+    } else if (closedComponentTemplate)
+        componentName = template.trim().replace(/[^a-z0-9]/gi, '')
     else throw new Error('Invalid template component')
 
     // Define component
@@ -44,18 +54,17 @@ export function makeStorie<T>(component: VueConstructor, template: string): Stor
             props: Object.keys(argTypes),
             components: { component },
             template,
-            store
+            store,
         }),
-        args: {}
+        args: {},
     }
 }
 
-
 type Options = {
-    title: string;
-    component: VueConstructor;
-    description?: string;
-    [key: string]: any;
+    title: string
+    component: VueConstructor
+    description?: string
+    [key: string]: any
 }
 
-type OptionsParameters = { options: Options; addictional?: any[]; }
+type OptionsParameters = { options: Options; addictional?: any[] }
